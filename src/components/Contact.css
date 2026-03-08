@@ -1,0 +1,176 @@
+/* ===== SECTION ===== */
+.contact {
+  width: 100%;
+  padding: 100px 20px;
+  background: #0b0b0b;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow background */
+.contact::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  right: -150px;
+  top: 0;
+  background: radial-gradient(
+    circle,
+    rgba(196, 255, 0, 0.4) 0%,
+    transparent 70%
+  );
+  filter: blur(80px);
+  opacity: 0.15;
+}
+
+.contact-container {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ===== TITLE ===== */
+.contact-title {
+  font-size: 60px;
+  line-height: 1.2;
+  margin-bottom: 60px;
+}
+
+.contact-title span {
+  color: #c4ff00;
+}
+
+/* ===== FORM ===== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  animation: floatForm 6s ease-in-out infinite;
+}
+
+/* Input Row */
+.input-row {
+  display: flex;
+  gap: 20px;
+}
+
+.input-row input {
+  flex: 1;
+}
+
+/* Inputs */
+input,
+textarea {
+  width: 100%;
+  background: #111;
+  border: 1px solid #222;
+  padding: 16px;
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+textarea {
+  min-height: 160px;
+  resize: none;
+  width: 96%;
+}
+
+/* Focus Effect */
+input:focus,
+textarea:focus {
+  border-color: #c4ff00;
+}
+
+/* Submit Button */
+.contact-btn {
+  width: 100%;
+  background: #c4ff00;
+  color: black;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  animation: buttonGlow 3s ease-in-out infinite;
+}
+
+.contact-btn:hover {
+  transform: translateY(-4px);
+}
+
+/* ===== Animations ===== */
+
+@keyframes floatForm {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes buttonGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(196, 255, 0, 0);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(196, 255, 0, 0.35);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(196, 255, 0, 0);
+  }
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 992px) {
+  .contact {
+    padding: 80px 20px;
+  }
+
+  .contact-title {
+    font-size: 42px;
+    margin-bottom: 40px;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .contact {
+    padding: 60px 15px;
+  }
+
+  .contact-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  input,
+  textarea {
+    padding: 14px;
+    font-size: 13px;
+  }
+
+  textarea {
+    min-height: 140px;
+  }
+
+  .contact-btn {
+    padding: 14px;
+    font-size: 14px;
+  }
+}

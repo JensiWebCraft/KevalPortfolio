@@ -1,0 +1,147 @@
+/* ===== FOOTER ===== */
+.footer {
+  width: 100%;
+  padding: 40px 20px;
+  background: #0b0b0b;
+  border-top: 1px solid #222;
+  color: white;
+}
+
+/* Main Row */
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.footer-logo {
+  font-size: 20px;
+  letter-spacing: 2px;
+
+  /* floating animation */
+  animation: footerFloat 5s ease-in-out infinite;
+}
+
+/* Links */
+.footer-links {
+  display: flex;
+  gap: 30px;
+  font-size: 14px;
+  color: #bdbdbd;
+}
+
+.footer-links span {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-links span:hover {
+  color: #c4ff00;
+  transform: translateY(-2px);
+}
+
+/* Social Icons */
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social span {
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  /* glowing animation */
+  animation: socialGlow 3s ease-in-out infinite;
+}
+
+.footer-social span:hover {
+  color: #c4ff00;
+}
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 12px;
+  color: #777;
+}
+
+/* ===== Animations ===== */
+
+/* floating logo */
+@keyframes footerFloat {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* glowing icons */
+@keyframes socialGlow {
+  0% {
+    text-shadow: 0 0 0 rgba(196, 255, 0, 0);
+  }
+
+  50% {
+    text-shadow: 0 0 10px rgba(196, 255, 0, 0.6);
+  }
+
+  100% {
+    text-shadow: 0 0 0 rgba(196, 255, 0, 0);
+  }
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 992px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+  .input-row {
+    display: flex;
+    gap: 20px;
+    margin-right: 35px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .footer {
+    padding: 30px 15px;
+  }
+
+  .footer-logo {
+    font-size: 18px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 13px;
+  }
+
+  .footer-social {
+    gap: 12px;
+  }
+
+  .footer-bottom {
+    font-size: 11px;
+  }
+}
